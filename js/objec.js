@@ -78,7 +78,7 @@ export class Background {
         this.image = image
         this.matris = null
 
-        let k = (canvas.height / this.image.height)
+        let k = canvas.height / this.image.height
         this.width = this.image.width * k
         this.height = this.image.height * k
 
@@ -96,7 +96,7 @@ export class Background {
             this.len_y = this.matris.length
 
             this.k_lw = this.len_x / this.width;
-            this.k_lc = this.len_y / this.height;
+            this.k_lc = this.len_y / this.ca_h
 
 
             this.player = player_o
