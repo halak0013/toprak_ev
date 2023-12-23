@@ -1,5 +1,7 @@
-import { Player, Platform, GenericObject, Background } from './js/objec.js';
-import { c, canvas, res_plt, res_hill, res_backgr, res_smallTall, res_plt2 } from './js/commons.js';
+import { GenericObject } from './js/objec.js';
+import { Background } from './js/BackgroundC.js';
+import { c, canvas, res_hill, res_plt2, speed_ } from './js/commons.js';
+import { Player } from './js/PlayerC.js'
 
 
 
@@ -41,10 +43,13 @@ function animate() {
 
     if (keys.right.pressed && player.position.x < 400 && !background.checkCollision(+1, 0)) {
         player.velocity.x = player.speed
+        player.frame++
     }
     else if ((keys.left.pressed && player.position.x > 200 && !background.checkCollision(-1, 0)) ||
         (keys.left.pressed && scrollOfSet === 0 && player.position.x > 0)) {
         player.velocity.x = -player.speed
+        player.frame--
+
     }
     else {
         player.velocity.x = 0
@@ -52,6 +57,8 @@ function animate() {
             scrollOfSet += player.speed
             player.position.abs_x += player.speed
             background.position.x -= player.speed
+            player.frame++
+
 
         } else if (keys.left.pressed && scrollOfSet > 0 && !background.checkCollision(-1, 0)) {
             scrollOfSet -= player.speed
@@ -60,34 +67,27 @@ function animate() {
             genericObjects.forEach(gobj => {
                 gobj.position.x += player.speed * .66
             })
+            player.frame--
         }
-
     }
-
-    /* platforms.forEach(platform => {
-        if (player.position.y + player.height <= platform.position.y &&
-            player.position.y + player.height + player.velocity.y >=
-            platform.position.y && player.position.x + player.width >= platform.position.x
-            && player.position.x <= platform.position.x + platform.width)
-            player.velocity.y = 0
-    }) */
-
-    //background.checkCollision(0, 1);
-    //background.checkCollision(0,-1);
 
     //win game
     if (scrollOfSet > 2000) {
         console.log('kazandın')
+        init()
     }
 }
 
 animate()
 function init() {
-    //TODO: burda başlangıç değerleri eklencek
     player.position.x = 100
-    player.position.y = 100
+    player.position.y = 450
+    player.position.abs_x = 100
     player.velocity.x = 0
     player.velocity.y = 0
+    background.position.x = 0
+    background.position.y = 0
+    scrollOfSet = 0
 }
 window.addEventListener('keydown', ({ keyCode }) => {
     //console.log(keyCode)
@@ -95,7 +95,7 @@ window.addEventListener('keydown', ({ keyCode }) => {
         case 38://yukarı
             console.log(player.velocity.y)
             if (keys.up.pressed && player.velocity.y > -10) {
-                player.velocity.y -= 20
+                player.velocity.y -= 20 * speed_.speed
                 keys.up.pressed = false
             }
             break;

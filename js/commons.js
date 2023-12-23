@@ -1,8 +1,12 @@
-export const gravity = 0.8
 export const canvas = document.querySelector('canvas');
 export const c = canvas.getContext("2d")
-canvas.width =  1080 //innerWidth //
-canvas.height = 720 //innerHeight //
+canvas.width =  innerWidth //
+canvas.height = innerHeight //
+export const speed_ = {
+    speed_r: canvas.height/2000,
+    speed: canvas.height/2000,
+    gravity: 0.8*(canvas.height/2000),
+}
 
 
 export const res_plt = new Image();
@@ -17,3 +21,6 @@ res_smallTall.src = "../data/img/platformSmallTall.png";
 
 export const res_plt2 = new Image();
 res_plt2.src = "../data/img/_composite.png";
+
+export const res_player = new Image();
+res_player.src = "../data/img/watermelon.png";
