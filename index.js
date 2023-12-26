@@ -1,14 +1,12 @@
-import { GenericObject } from './js/objec.js';
-import { Background } from './js/BackgroundC.js';
-import { c, canvas, res_hill, res_plt2, speed_ } from './js/commons.js';
+import { speed_, levels } from './js/commons.js';
 import { Player } from './js/PlayerC.js'
+import { Level1 } from './js/levels/level1.js'
+import { Level2 } from './js/levels/level2.js'
+import { Level3 } from './js/levels/level3.js'
 
 
-
-const genericObjects = [new GenericObject(-1, -110, res_hill)]
 const player = new Player()
-const background = new Background(0, 0, res_plt2)
-background.init(player).then(() => { });
+
 
 
 const keys = {
@@ -23,72 +21,26 @@ const keys = {
     }
 }
 
-let scrollOfSet = 0
+const l1 = new Level1(player, keys)
+const l2 = new Level2(player, keys)
+const l3 = new Level3(player, keys)
+
 
 function animate() {
     requestAnimationFrame(animate)
-    c.fillStyle = 'white'
-    c.fillRect(0, 0, canvas.width, canvas.height)
-
-
-
-    if (background.draw()) {
-        console.log('draw')
-        player.velocity.y = 0
-    }
-    /* genericObjects.forEach(gobj => {
-        gobj.draw()
-    }) */
-    player.update(background)
-
-    if (keys.right.pressed && player.position.x < 400 && !background.checkCollision(+1, 0)) {
-        player.velocity.x = player.speed
-        player.frame++
-    }
-    else if ((keys.left.pressed && player.position.x > 200 && !background.checkCollision(-1, 0)) ||
-        (keys.left.pressed && scrollOfSet === 0 && player.position.x > 0)) {
-        player.velocity.x = -player.speed
-        player.frame--
-
-    }
-    else {
-        player.velocity.x = 0
-        if (keys.right.pressed && !background.checkCollision(+1, 0)) {
-            scrollOfSet += player.speed
-            player.position.abs_x += player.speed
-            background.position.x -= player.speed
-            player.frame++
-
-
-        } else if (keys.left.pressed && scrollOfSet > 0 && !background.checkCollision(-1, 0)) {
-            scrollOfSet -= player.speed
-            player.position.abs_x -= player.speed
-            background.position.x += player.speed
-            genericObjects.forEach(gobj => {
-                gobj.position.x += player.speed * .66
-            })
-            player.frame--
-        }
-    }
-
-    //win game
-    if (scrollOfSet > 2000) {
-        console.log('kazandın')
-        init()
+    if (levels.l1) {
+        l1.update();
+    }else if(levels.l2){
+        l2.update();
+    }else if(levels.l3){
+        l3.update();
+    }else{
+        
     }
 }
 
 animate()
-function init() {
-    player.position.x = 100
-    player.position.y = 450
-    player.position.abs_x = 100
-    player.velocity.x = 0
-    player.velocity.y = 0
-    background.position.x = 0
-    background.position.y = 0
-    scrollOfSet = 0
-}
+
 window.addEventListener('keydown', ({ keyCode }) => {
     //console.log(keyCode)
     switch (keyCode) {

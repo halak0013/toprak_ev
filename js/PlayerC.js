@@ -1,27 +1,27 @@
-import { c, canvas,  res_player as res_player, speed_ } from './commons.js';
+import { c, canvas, res_player, speed_ } from './commons.js';
 
 
 export class Player {
     constructor() {
         this.position = {
-            x: canvas.width/100,
-            abs_x: canvas.width/100,
-            y: canvas.height/200
+            x: canvas.width / 100,
+            abs_x: canvas.width / 100,
+            y: canvas.height / 200
         }
         this.velocity = {
             x: 0,
             y: 0
         }
-        this.res_player=res_player
-        
+        this.res_player = res_player
+
         console.log(this.res_player.width)
-        this.width = ((this.res_player.width)/(16))
+        this.width = ((this.res_player.width) / (16))
         this.height = this.res_player.height
 
-        this.w2=this.width*(canvas.height/1000)
-        this.h2=this.height*(canvas.height/1000)
-        this.h3=this.height*(canvas.height/1300)
-        
+        this.w2 = this.width * (canvas.height / 1000)
+        this.h2 = this.height * (canvas.height / 1000)
+        this.h3 = this.height * (canvas.height / 1300)
+
         this.speed = 5 * speed_.speed
 
 
@@ -30,12 +30,12 @@ export class Player {
 
     draw() {
         c.drawImage(this.res_player,
-            this.width*this.frame,
+            this.width * this.frame,
             0,
             this.width,
             this.height,
             this.position.x,
-            this.position.y+this.h3, this.w2, this.h2);
+            this.position.y + this.h3, this.w2, this.h2);
     }
 
     calculatePlayerHeight() {
@@ -72,7 +72,7 @@ export class Player {
                 this.position.y += Math.sign(this.velocity.y);
             }
         }
-
-
     }
+
+
 }

@@ -8,19 +8,29 @@ export const speed_ = {
     gravity: 0.8*(canvas.height/2000),
 }
 
-
-export const res_plt = new Image();
-res_plt.src = "../data/img/platform.png";
-export const res_hill = new Image();
-res_hill.src = "../data/img/hills.png";
-export const res_backgr = new Image();
-res_backgr.src = "../data/img/background.png";
-
-export const res_smallTall = new Image();
-res_smallTall.src = "../data/img/platformSmallTall.png";
+export const levels = {
+    l1:false,
+    l2:true,
+    l3:false,
+    final:false,
+}
 
 export const res_plt2 = new Image();
 res_plt2.src = "../data/img/_composite.png";
 
 export const res_player = new Image();
 res_player.src = "../data/img/watermelon.png";
+
+export const res_dark = new Image();
+res_dark.src = "../data/img/siyah.png";
+
+export const res_l1 = new Image();
+res_l1.src = "../data/levels/l1/simplified/AutoLayers_advanced_demo/_composite.png";
+
+export const res_l2 = new Image();
+res_l2.src = "../data/levels/l2/simplified/AutoLayers_advanced_demo/_composite.png";
+
+export const res_l3 = new Image();
+res_l3.src = "../data/levels/l3/simplified/AutoLayers_advanced_demo/_composite.png";
+
+
