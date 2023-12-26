@@ -1,16 +1,16 @@
-import { c, canvas,  res_dark, speed_ } from './commons.js';
+import { c, canvas, res_dark, speed_ } from './commons.js';
 import { readCSVFile } from './matrisPro.js'
 
 
 
 export class Background {
-    constructor(x, y, image,csv) {
+    constructor(x, y, image, csv) {
         this.position = {
             x,
             y
         }
         this.image = image
-        this.csv=csv
+        this.csv = csv
         this.matris = null
 
         this.ca_h = canvas.height
@@ -26,8 +26,8 @@ export class Background {
     async init(player_o) {
         try {
             //ToprakEv/data/levels/l2/simplified/AutoLayers_advanced_demo
-            const dosyaYolue = '../data/levels/'+this.csv+'/simplified/AutoLayers_advanced_demo/IntGrid_layer.csv';
-            const dosyaYolu='../data/levels/l2/simplified/AutoLayers_advanced_demo/IntGrid_layer.csv'
+            const dosyaYolue = '../data/levels/' + this.csv + '/simplified/AutoLayers_advanced_demo/IntGrid_layer.csv';
+            const dosyaYolu = '../data/levels/l2/simplified/AutoLayers_advanced_demo/IntGrid_layer.csv'
             this.matris = await readCSVFile(dosyaYolu);
             this.len_x = this.matris[0].length;
             this.len_y = this.matris.length
@@ -64,24 +64,24 @@ export class Background {
         if (this.matris[y + t_y][x + t_x] == '1' || this.ca_h < this.player.position.y) {
             return true
         }
-        if (this.matris[y + t_y][x + t_x] == '2'){
+        if (this.matris[y + t_y][x + t_x] == '2') {
             console.log("su")
-            speed_.speed =speed_.speed_r/4
-            speed_.gravity =speed_.speed_r*0.01
-            
-        }else{
-            speed_.speed =speed_.speed_r
-            speed_.gravity =speed_.speed_r*0.8
+            speed_.speed = speed_.speed_r / 4
+            speed_.gravity = speed_.speed_r * 0.01
+
+        } else {
+            speed_.speed = speed_.speed_r
+            speed_.gravity = speed_.speed_r * 0.8
         }
         return false
     }
 
-    checkEnd(){
+    checkEnd() {
         let cor = this.getCordinate()
         let x = cor.x
         let y = cor.y
 
-        if (this.matris[y][x] == '3'){
+        if (this.matris[y][x] == '3') {
             console.log("son")
             return true
         }
@@ -98,15 +98,15 @@ export class DarkBackground {
             y
         }
         this.image = res_dark
-        this.width=this.image.width*2
-        this.height=this.image.height*2
-        this.h2=this.height/2
-        this.w2=this.width/2
+        this.width = this.image.width * 2
+        this.height = this.image.height * 2
+        this.h2 = this.height / 2
+        this.w2 = this.width / 2
     }
     draw() {
         c.drawImage(this.image,
-            this.position.x-this.w2+10,
-            this.position.y-this.h2+10, this.width, this.height);
+            this.position.x - this.w2 + 10,
+            this.position.y - this.h2 + 10, this.width, this.height);
     }
 }
 

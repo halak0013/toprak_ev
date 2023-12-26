@@ -1,10 +1,10 @@
-import { c, canvas,levels } from './commons.js';
+import { c, canvas, levels } from './commons.js';
 
 export class Engine {
 
     constructor() {
         this.scrollOfSet = 0
-        this.audio=null
+        this.audio;
     }
 
     movment(player, background, keys, is_coustom) {
@@ -47,13 +47,13 @@ export class Engine {
         }
     }
 
-    playSound(track){
+    playSound(track) {
         this.audio = new Audio(track);
 
         this.audio.play();
-    
+
         // Tarayıcı penceresi kapandığında duraklat
-        window.addEventListener('beforeunload', function() {
+        window.addEventListener('beforeunload', function () {
             this.audio.pause();
         });
     }
