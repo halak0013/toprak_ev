@@ -43,7 +43,7 @@ export class Level2 {
         this.background.position.x = 0
         this.background.position.y = 0
         this.scrollOfSet = 0
-        this.engine.playSound('../../data/sound/Pixel_3.mp3')
+        //this.engine.playSound('../../data/sound/Pixel_3.mp3')
     }
 }
 

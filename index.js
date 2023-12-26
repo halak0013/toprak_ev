@@ -3,6 +3,7 @@ import { Player } from './js/PlayerC.js'
 import { Level1 } from './js/levels/level1.js'
 import { Level2 } from './js/levels/level2.js'
 import { Level3 } from './js/levels/level3.js'
+import {Engine} from './js/engine.js'
 
 
 const player = new Player()
@@ -24,6 +25,9 @@ const keys = {
 const l1 = new Level1(player, keys)
 const l2 = new Level2(player, keys)
 const l3 = new Level3(player, keys)
+const e = new Engine()
+e.playSound('../../data/sound/Pixel_3.mp3')
+
 
 
 function animate() {

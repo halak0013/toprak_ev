@@ -26,8 +26,8 @@ export class Background {
     async init(player_o) {
         try {
             //ToprakEv/data/levels/l2/simplified/AutoLayers_advanced_demo
-            const dosyaYolue = '../data/levels/' + this.csv + '/simplified/AutoLayers_advanced_demo/IntGrid_layer.csv';
-            const dosyaYolu = '../data/levels/l2/simplified/AutoLayers_advanced_demo/IntGrid_layer.csv'
+            const dosyaYolu = '../data/levels/' + this.csv + '/simplified/AutoLayers_advanced_demo/IntGrid_layer.csv';
+            //const dosyaYolu = '../data/levels/l2/simplified/AutoLayers_advanced_demo/IntGrid_layer.csv'
             this.matris = await readCSVFile(dosyaYolu);
             this.len_x = this.matris[0].length;
             this.len_y = this.matris.length
@@ -109,66 +109,3 @@ export class DarkBackground {
             this.position.y - this.h2 + 10, this.width, this.height);
     }
 }
-
-//export class Background2 {
-//    constructor(x, y, image) {
-//        this.position = {
-//            x,
-//            y
-//        }
-//
-//        this.k = 2;
-//        this.ca_h = canvas.height
-//        this.ca_w = canvas.width
-//        this.height = image.height * (this.ca_h * this.k / image.height)
-//        this.width = image.width * (this.ca_h * this.k / image.height)//TODO: burası genişliğe göre değişebilir
-//
-//        this.image = image;
-//        this.matris = null;
-//
-//    }
-//
-//    async init(player_o) {
-//        try {
-//            const dosyaYolu = '../data/csv/IntGrid_layer.csv';
-//            this.matris = await readCSVFile(dosyaYolu);
-//            this.len_x = this.matris[0].length;
-//            this.len_y = this.matris.length;
-//
-//            this.player = player_o;
-//
-//            // Print matris with indices
-//            /* for (let i = 0; i < this.len_y; i++) {
-//                for (let j = 0; j < this.len_x; j++) {
-//                    console.log(`matris[${i}][${j}]:`, this.matris[i][j]);
-//                }
-//            } */
-//
-//        } catch (error) {
-//            console.error('CSV dosyasını okuma hatası:', error);
-//        }
-//    }
-//    draw() {
-//        c.drawImage(this.image, this.position.x, this.position.y - (this.ca_h * (this.k - 1)), this.width, this.height);
-//    }
-//
-//    checkCollision(t_x, t_y) {
-//        if (this.matris === null) return
-//        let y = Math.floor(((this.ca_h * this.k) - this.player.position.y) * (this.len_y / (this.k * this.ca_h)))
-//        let x = Math.floor(this.player.position.x * (this.len_x / (this.k * this.ca_h)))//TODO: burası genişliğe göre değişebilir
-//
-//        console.log("y_v: " + this.player.velocity.y, "y_p: " + this.player.position.y
-//            + " abs_x_p: " + this.player.position.abs_x + " x: " + x + " y: " + y + " ca: "
-//            + this.ca_h + " ca-y: " + (this.ca_h - y) + " len_y: " + this.len_y + " değer_y: " /* +(y + t_y) */)
-//        if (this.matris[y + t_y][x + t_x] == '1' || this.ca_h < this.player.position.y) {
-//            //this.player.velocity.y = 0
-//            return true
-//        }
-//        if (this.matris[y + t_y][x + t_x] == '2') {
-//            console.log("su")
-//        }
-//        return false
-//    }
-//
-//
-//}

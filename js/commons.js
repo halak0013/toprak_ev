@@ -9,8 +9,8 @@ export const speed_ = {
 }
 
 export const levels = {
-    l1: false,
-    l2: true,
+    l1: true,
+    l2: false,
     l3: false,
     final: false,
 }
