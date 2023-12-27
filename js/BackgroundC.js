@@ -1,4 +1,4 @@
-import { c, canvas, res_dark, speed_ } from './commons.js';
+import { c, canvas, link, res_dark, speed_ } from './commons.js';
 import { readCSVFile } from './matrisPro.js'
 
 
@@ -26,7 +26,7 @@ export class Background {
     async init(player_o) {
         try {
             //ToprakEv/data/levels/l2/simplified/AutoLayers_advanced_demo
-            const dosyaYolu = '../data/levels/' + this.csv + '/simplified/AutoLayers_advanced_demo/IntGrid_layer.csv';
+            const dosyaYolu = link+'/data/levels/' + this.csv + '/simplified/AutoLayers_advanced_demo/IntGrid_layer.csv';
             //const dosyaYolu = '../data/levels/l2/simplified/AutoLayers_advanced_demo/IntGrid_layer.csv'
             this.matris = await readCSVFile(dosyaYolu);
             this.len_x = this.matris[0].length;

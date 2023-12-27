@@ -1,4 +1,4 @@
-import { speed_, levels } from './js/commons.js';
+import { speed_, levels, link } from './js/commons.js';
 import { Player } from './js/PlayerC.js'
 import { Level1 } from './js/levels/level1.js'
 import { Level2 } from './js/levels/level2.js'
@@ -35,7 +35,7 @@ function playSoundAsync(soundPath) {
     });
 }
 
-playSoundAsync('../../data/sound/Pixel_3.mp3')
+playSoundAsync(link+'/data/sound/Pixel_3.mp3')
     .then(() => {
         // Code to run after the sound has finished playing
         console.log('Other lines of code');

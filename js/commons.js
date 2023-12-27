@@ -15,7 +15,7 @@ export const levels = {
     final: false,
 }
 
-const link ='https://halak0013.github.io/toprak_ev'
+export const link ='https://halak0013.github.io/toprak_ev'
 
 export const res_player = new Image();
 res_player.src = link+"/data/img/watermelon.png";
