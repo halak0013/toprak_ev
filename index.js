@@ -26,7 +26,7 @@ const l1 = new Level1(player, keys)
 const l2 = new Level2(player, keys)
 const l3 = new Level3(player, keys)
 const e = new Engine()
-function playSoundAsync(soundPath) {
+/* function playSoundAsync(soundPath) {
     return new Promise((resolve, reject) => {
         e.playSound(soundPath, () => {
             console.log('Sound finished playing');
@@ -42,7 +42,7 @@ playSoundAsync('../../data/sound/Pixel_3.mp3')
     })
     .catch((error) => {
         console.error('Error playing sound:', error);
-    });
+    }); */
 
 
 
