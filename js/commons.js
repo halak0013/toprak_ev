@@ -15,20 +15,21 @@ export const levels = {
     final: false,
 }
 
+const link ='https://halak0013.github.io/toprak_ev'
 
 export const res_player = new Image();
-res_player.src = "../data/img/watermelon.png";
+res_player.src = link+"/data/img/watermelon.png";
 
 export const res_dark = new Image();
-res_dark.src = "../data/img/siyah.png";
+res_dark.src = link+"/data/img/siyah.png";
 
 export const res_l1 = new Image();
-res_l1.src = "../data/levels/l1/simplified/AutoLayers_advanced_demo/_composite.png";
+res_l1.src = link+"/data/levels/l1/simplified/AutoLayers_advanced_demo/composite.png";
 
 export const res_l2 = new Image();
-res_l2.src = "../data/levels/l2/simplified/AutoLayers_advanced_demo/_composite.png";
+res_l2.src = link+"/data/levels/l2/simplified/AutoLayers_advanced_demo/composite.png";
 
 export const res_l3 = new Image();
-res_l3.src = "../data/levels/l3/simplified/AutoLayers_advanced_demo/_composite.png";
+res_l3.src = link+"/data/levels/l3/simplified/AutoLayers_advanced_demo/composite.png";
 
 
