@@ -17,12 +17,14 @@ export const levels = {
 
 export const link ='https://halak0013.github.io/toprak_ev'
 
+//https://zeschpix.itch.io/pixel-foodfruitvegetables
 export const res_player = new Image();
 res_player.src = link+"/data/img/watermelon.png";
 
 export const res_dark = new Image();
 res_dark.src = link+"/data/img/siyah.png";
 
+//https://ldtk.io/
 export const res_l1 = new Image();
 res_l1.src = link+"/data/levels/l1/simplified/AutoLayers_advanced_demo/composite.png";
 

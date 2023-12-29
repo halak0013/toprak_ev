@@ -1,4 +1,4 @@
-import { speed_, levels, link } from './js/commons.js';
+import { speed_, levels, canvas,c , link } from './js/commons.js';
 import { Player } from './js/PlayerC.js'
 import { Level1 } from './js/levels/level1.js'
 import { Level2 } from './js/levels/level2.js'
@@ -35,14 +35,49 @@ function playSoundAsync(soundPath) {
     });
 }
 
-playSoundAsync(link+'/data/sound/Pixel_3.mp3')
+/* playSoundAsync(link+'/data/sound/Pixel_3.mp3')
     .then(() => {
         // Code to run after the sound has finished playing
         console.log('Other lines of code');
     })
     .catch((error) => {
         console.error('Error playing sound:', error);
-    });
+    }); */
+
+const btn_up = document.getElementById('btn_up')
+btn_up.addEventListener('mousedown', () => {
+    console.log(player.velocity.y)
+    if (keys.up.pressed && player.velocity.y > -10) {
+        player.velocity.y -= 20 * speed_.speed
+        keys.up.pressed = false
+    }
+})
+btn_up.addEventListener('mouseup', () => {
+    keys.up.pressed = true
+})
+
+
+const btn_right = document.getElementById('btn_right')
+btn_right.addEventListener('mousedown', () => {
+    keys.right.pressed = true
+})
+btn_right.addEventListener('mouseup', () => {
+    keys.right.pressed = false
+})
+
+const btn_left = document.getElementById('btn_left')
+btn_left.addEventListener('mousedown', () => {
+    keys.left.pressed = true
+})
+btn_left.addEventListener('mouseup', () => {
+    keys.left.pressed = false
+})
+
+btn_left.style.left = canvas.width - 150 + 'px'
+btn_right.style.left = canvas.width - 50 + 'px'
+btn_up.style.top = canvas.height - 75 + 'px'
+btn_right.style.top = canvas.height - 75 + 'px'
+btn_left.style.top = canvas.height - 75 + 'px'
 
 
 
