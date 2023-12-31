@@ -22,10 +22,10 @@ export const res_player = new Image();
 res_player.src = link + "/data/img/watermelon.png";
 
 export const res_dark = new Image();
-res_dark.src = link + "/data/img/siyah.png";
+res_dark.src = link + "/data/img/dark.png";
 
 export const res_o_dark = new Image();
-res_dark.src = link + "/data/img/o_siyah.png";
+res_dark.src = link + "/data/img/orange_dark.png";
 
 //https://ldtk.io/
 export const res_l1 = new Image();
