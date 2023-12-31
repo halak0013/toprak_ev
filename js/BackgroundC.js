@@ -109,14 +109,14 @@ export class DarkBackground {
             x,
             y
         }
-        this.image = res_dark
-        this.width = this.image.width * 2
-        this.height = this.image.height * 2
+        this.image_dark = res_dark
+        this.width = this.image_dark.width * 2
+        this.height = this.image_dark.height * 2
         this.h2 = this.height / 2
         this.w2 = this.width / 2
     }
     draw() {
-        c.drawImage(this.image,
+        c.drawImage(this.image_dark,
             this.position.x - this.w2 + 10,
             this.position.y - this.h2 + 10, this.width, this.height);
     }
@@ -128,15 +128,15 @@ export class DarkOBackground {
             x,
             y
         }
-        this.image = res_o_dark
-        this.width = this.image.width * 2
-        this.height = this.image.height * 2
+        this.image_o = res_o_dark
+        this.width = this.image_o.width * 2
+        this.height = this.image_o.height * 2
         this.h2 = this.height / 2
         this.w2 = this.width / 2
-        this.image.style.opacity = 0.5
+        this.image_o.style.opacity = 0.5
     }
     draw() {
-        c.drawImage(this.image,
+        c.drawImage(this.image_o,
             this.position.x - this.w2 + 10,
             this.position.y - this.h2 + 10, this.width, this.height);
     }
