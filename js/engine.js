@@ -62,15 +62,15 @@ export class Engine {
     nextLevel(current) {
         switch (current) {
             case 1:
-                levels.l1 = false
                 levels.l2 = true
+                levels.l1 = false
                 break;
             case 2:
-                levels.l2 = false
                 levels.l3 = true
+                levels.l2 = false
             case 3:
-                levels.l3 = false
                 levels.final = true
+                levels.l3 = false
             default:
                 break;
         }
