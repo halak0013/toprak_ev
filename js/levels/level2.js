@@ -1,5 +1,5 @@
 import { Background, DarkBackground } from '../BackgroundC.js';
-import { canvas, res_l2 , story2} from '../commons.js';
+import { canvas, res_l2, story2 } from '../commons.js';
 import { Engine } from '../engine.js'
 
 export class Level2 {
@@ -14,8 +14,8 @@ export class Level2 {
         this.scrollOfSet = 0
         this.engine = new Engine()
     }
-    
-    
+
+
     update() {
         if (this.ready) {
             if (!this.isInit) {

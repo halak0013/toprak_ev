@@ -51,5 +51,5 @@ export const story3 = ["En sonunda ışık kaynağını buldun ama burda bir sor
     "Acele etesen iyi olur. Işık kaynağını bul ve sona ulaş."]
 
 export const story4 = ["Tebrikler sona ulaştın. Artık evine dönebilirsin. Hayatta bazen zorluklar çıkabilir. İnanırsan elbet bir gün başarırsın.",
-"Kaynaklar: <br> Karpuz görseli: https://zeschpix.itch.io/pixel-foodfruitvegetables <br> Arka plan: https://ldtk.io/ <br> Arka plan sesi: https://alkakrab.itch.io/free-12-tracks-pixel-rpg-game-music-pack",
-"Oyun Geliştiricisi ve tasarımcısı:<br> Muhammet Halak"]
+    "Kaynaklar: <br> Karpuz görseli: https://zeschpix.itch.io/pixel-foodfruitvegetables <br> Arka plan: https://ldtk.io/ <br> Arka plan sesi: https://alkakrab.itch.io/free-12-tracks-pixel-rpg-game-music-pack",
+    "Oyun Geliştiricisi ve tasarımcısı:<br> Muhammet Halak"]

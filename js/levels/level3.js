@@ -1,5 +1,5 @@
-import { Background, DarkOBackground} from '../BackgroundC.js';
-import { res_l3, canvas , story3} from '../commons.js';
+import { Background, DarkOBackground } from '../BackgroundC.js';
+import { res_l3, canvas, story3 } from '../commons.js';
 import { Engine } from '../engine.js'
 
 export class Level3 {
@@ -20,12 +20,12 @@ export class Level3 {
 
     update() {
         if (this.ready) {
-            if(this.time<120){
+            if (this.time < 120) {
                 if (!this.isInit) {
                     this.init()
                     this.isInit = true;
                     this.engine.storyPart(story3)
-    
+
                 }
                 this.engine.movment(this.player, this.background, this.keys)
                 this.darker()
@@ -34,13 +34,13 @@ export class Level3 {
                 if (this.background.checkLav())
                     this.init()
             }
-            else{
+            else {
                 this.init()
             }
         }
     }
 
-    updateTime(){
+    updateTime() {
         this.time++;
 
     }
@@ -62,7 +62,7 @@ export class Level3 {
         this.scrollOfSet = 0
         this.time = 0
         let timer = document.getElementById('timer')
-        setInterval(()=>{this.time++;timer.innerText=this.time},1000)
+        setInterval(() => { this.time++; timer.innerText = this.time }, 1000)
         //this.engine.playSound('../../data/sound/Pixel_3.mp3')
     }
 }

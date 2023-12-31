@@ -1,5 +1,5 @@
 import { Background, DarkBackground } from '../BackgroundC.js';
-import { res_l1, canvas ,story1} from '../commons.js';
+import { res_l1, canvas, story1 } from '../commons.js';
 import { Engine } from '../engine.js'
 
 export class Level1 {
@@ -15,8 +15,8 @@ export class Level1 {
 
         this.engine = new Engine()
     }
-    
-    
+
+
     update() {
         if (this.ready) {
             if (!this.isInit) {

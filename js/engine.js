@@ -80,12 +80,12 @@ export class Engine {
         let btn_prev = document.getElementById('btn_prev')
         let btn_next = document.getElementById('btn_next')
         let btn_close = document.getElementById('btn_close')
-        let story_box=document.getElementById('story')
+        let story_box = document.getElementById('story')
         story_box.style.visibility = 'visible'
         let i = 0
         btn_next.addEventListener('click', () => { if (i < text.length - 1) i++; story_text.innerHTML = text[i] })
         btn_prev.addEventListener('click', () => { if (i > 0) i--; story_text.innerHTML = text[i] })
-        btn_close.addEventListener('click', () => { story_box.style.visibility = 'hidden',this.isInit=true })
+        btn_close.addEventListener('click', () => { story_box.style.visibility = 'hidden', this.isInit = true })
         story_text.innerHTML = text[i]
     }
 }

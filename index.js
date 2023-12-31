@@ -1,4 +1,4 @@
-import { speed_, levels, canvas, c, link ,story4} from './js/commons.js';
+import { speed_, levels, canvas, c, link, story4 } from './js/commons.js';
 import { Player } from './js/PlayerC.js'
 import { Level1 } from './js/levels/level1.js'
 import { Level2 } from './js/levels/level2.js'
@@ -74,7 +74,7 @@ function animate() {
     } else if (levels.l3) {
         l3.update();
     } else {
-        let story_box=document.getElementById('story')
+        let story_box = document.getElementById('story')
         story_box.style.visibility = 'visible'
         let story_text = document.getElementById('storyText')
         story_text.innerHTML = story4[0]
