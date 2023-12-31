@@ -25,7 +25,7 @@ export const res_dark = new Image();
 res_dark.src = link + "/data/img/dark.png";
 
 export const res_o_dark = new Image();
-res_dark.src = link + "/data/img/orange_dark.png";
+res_dark.src = "https://halak0013.github.io/toprak_ev/data/img/dark2.png";
 
 //https://ldtk.io/
 export const res_l1 = new Image();
