@@ -5,9 +5,10 @@ export class Engine {
     constructor() {
         this.scrollOfSet = 0
         this.audio;
+        this.isInit = false
     }
 
-    movment(player, background, keys, is_coustom) {
+    movment(player, background, keys) {
         c.fillStyle = 'black'
         c.fillRect(0, 0, canvas.width, canvas.height)
 
@@ -17,12 +18,12 @@ export class Engine {
         }
         player.update(background)
 
-        if (!is_coustom) {
+        if (this.isInit) {
             if (keys.right.pressed && player.position.x < 400 && !background.checkCollision(+1, 0)) {
                 player.velocity.x = player.speed
                 player.frame++
             }
-            else if ((keys.left.pressed && player.position.x > 10 && !background.checkCollision(-1, 0)) ||
+            else if ((keys.left.pressed && player.position.x > 50 && !background.checkCollision(-1, 0)) ||
                 (keys.left.pressed && this.scrollOfSet === 0 && player.position.x > 0)) {
                 player.velocity.x = -player.speed
                 player.frame--
@@ -73,5 +74,18 @@ export class Engine {
             default:
                 break;
         }
+    }
+    storyPart(text) {
+        let story_text = document.getElementById('storyText')
+        let btn_prev = document.getElementById('btn_prev')
+        let btn_next = document.getElementById('btn_next')
+        let btn_close = document.getElementById('btn_close')
+        let story_box=document.getElementById('story')
+        story_box.style.visibility = 'visible'
+        let i = 0
+        btn_next.addEventListener('click', () => { if (i < text.length - 1) i++; story_text.innerHTML = text[i] })
+        btn_prev.addEventListener('click', () => { if (i > 0) i--; story_text.innerHTML = text[i] })
+        btn_close.addEventListener('click', () => { story_box.style.visibility = 'hidden',this.isInit=true })
+        story_text.innerHTML = text[i]
     }
 }

@@ -1,4 +1,4 @@
-import { speed_, levels, canvas,c , link } from './js/commons.js';
+import { speed_, levels, canvas, c, link ,story4} from './js/commons.js';
 import { Player } from './js/PlayerC.js'
 import { Level1 } from './js/levels/level1.js'
 import { Level2 } from './js/levels/level2.js'
@@ -26,23 +26,7 @@ const l1 = new Level1(player, keys)
 const l2 = new Level2(player, keys)
 const l3 = new Level3(player, keys)
 const e = new Engine()
-function playSoundAsync(soundPath) {
-    return new Promise((resolve, reject) => {
-        e.playSound(soundPath, () => {
-            console.log('Sound finished playing');
-            resolve();
-        });
-    });
-}
-
-/* playSoundAsync(link+'/data/sound/Pixel_3.mp3')
-    .then(() => {
-        // Code to run after the sound has finished playing
-        console.log('Other lines of code');
-    })
-    .catch((error) => {
-        console.error('Error playing sound:', error);
-    }); */
+e.playSound(link + '/data/sound/Pixel_3.mp3')
 
 const btn_up = document.getElementById('btn_up')
 btn_up.addEventListener('mousedown', () => {
@@ -90,7 +74,10 @@ function animate() {
     } else if (levels.l3) {
         l3.update();
     } else {
-
+        let story_box=document.getElementById('story')
+        story_box.style.visibility = 'visible'
+        let story_text = document.getElementById('storyText')
+        story_text.innerHTML = story4[0]
     }
 }
 

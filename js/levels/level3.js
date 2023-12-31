@@ -1,5 +1,5 @@
-import { Background, DarkBackground } from '../BackgroundC.js';
-import { res_l3, canvas } from '../commons.js';
+import { Background, DarkOBackground} from '../BackgroundC.js';
+import { res_l3, canvas , story3} from '../commons.js';
 import { Engine } from '../engine.js'
 
 export class Level3 {
@@ -7,26 +7,48 @@ export class Level3 {
         this.player = player
         this.isInit = false
         this.ready = false
-        this.darkBck = new DarkBackground(0, 0)
+        this.darkBck = new DarkOBackground(0, 0)
         this.keys = keys
         this.background = new Background(0, 0, res_l3, "l3")//
         this.background.init(this.player).then(() => { this.ready = true });//
         this.scrollOfSet = 0
 
         this.engine = new Engine()
+        this.time = 0
     }
 
 
     update() {
         if (this.ready) {
-            if (!this.isInit) {
-                this.init()
-                this.isInit = true;
+            if(this.time<120){
+                if (!this.isInit) {
+                    this.init()
+                    this.isInit = true;
+                    this.engine.storyPart(story3)
+    
+                }
+                this.engine.movment(this.player, this.background, this.keys)
+                this.darker()
+                if (this.background.checkEnd())
+                    this.engine.nextLevel(3)
+                if (this.background.checkLav())
+                    this.init()
             }
-            this.engine.movment(this.player, this.background, this.keys, false)
-            if (this.background.checkEnd())
-                this.engine.nextLevel(3)
+            else{
+                this.init()
+            }
         }
+    }
+
+    updateTime(){
+        this.time++;
+
+    }
+
+    darker() {
+        this.darkBck.position.x = this.player.position.x
+        this.darkBck.position.y = this.player.position.y
+        this.darkBck.draw()
     }
 
     init() {
@@ -38,6 +60,9 @@ export class Level3 {
         this.background.position.x = 0
         this.background.position.y = 0
         this.scrollOfSet = 0
+        this.time = 0
+        let timer = document.getElementById('timer')
+        setInterval(()=>{this.time++;timer.innerText=this.time},1000)
         //this.engine.playSound('../../data/sound/Pixel_3.mp3')
     }
 }

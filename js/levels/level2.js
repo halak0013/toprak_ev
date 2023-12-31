@@ -1,5 +1,5 @@
 import { Background, DarkBackground } from '../BackgroundC.js';
-import { canvas, res_l2 } from '../commons.js';
+import { canvas, res_l2 , story2} from '../commons.js';
 import { Engine } from '../engine.js'
 
 export class Level2 {
@@ -14,15 +14,16 @@ export class Level2 {
         this.scrollOfSet = 0
         this.engine = new Engine()
     }
-
-
+    
+    
     update() {
         if (this.ready) {
             if (!this.isInit) {
                 this.init()
                 this.isInit = true;
+                this.engine.storyPart(story2)
             }
-            this.engine.movment(this.player, this.background, this.keys, false)
+            this.engine.movment(this.player, this.background, this.keys)
             this.darker()
             if (this.background.checkEnd())
                 this.engine.nextLevel(2)

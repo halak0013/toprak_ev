@@ -1,4 +1,4 @@
-import { c, canvas, link, res_dark, speed_ } from './commons.js';
+import { c, canvas, link, res_dark,res_o_dark, speed_ } from './commons.js';
 import { readCSVFile } from './matrisPro.js'
 
 
@@ -87,6 +87,18 @@ export class Background {
         }
         return false
     }
+
+    checkLav() {
+        let cor = this.getCordinate()
+        let x = cor.x
+        let y = cor.y
+
+        if (this.matris[y][x] == '4') {
+            console.log("fire")
+            return true
+        }
+        return false
+    }
 }
 
 
@@ -102,6 +114,26 @@ export class DarkBackground {
         this.height = this.image.height * 2
         this.h2 = this.height / 2
         this.w2 = this.width / 2
+    }
+    draw() {
+        c.drawImage(this.image,
+            this.position.x - this.w2 + 10,
+            this.position.y - this.h2 + 10, this.width, this.height);
+    }
+}
+
+export class DarkOBackground {
+    constructor(x, y) {
+        this.position = {
+            x,
+            y
+        }
+        this.image = res_o_dark
+        this.width = this.image.width * 2
+        this.height = this.image.height * 2
+        this.h2 = this.height / 2
+        this.w2 = this.width / 2
+        this.image.style.opacity = 0.5
     }
     draw() {
         c.drawImage(this.image,

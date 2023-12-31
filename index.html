@@ -6,58 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="data/img/icon.png" type="image/x-icon">
     <title>Toprak eve</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        button {
-            background-color: white;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 20px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        #canvasContainer {
-            position: relative;
-        }
-
-        canvas {
-            border: 1px solid white;
-            /* İstediğiniz kenarlık rengini ayarlayabilirsiniz */
-        }
-
-        button {
-            position: absolute;
-            top: 10px;
-            /* İstediğiniz yüksekliği ayarlayabilirsiniz */
-            left: 10px;
-            /* İstediğiniz sol kenar boşluğunu ayarlayabilirsiniz */
-            z-index: 1;
-            /* Canvas'ın altında olmasını sağlar */
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
     <div id="canvasContainer">
+        <div id="story">
+            <button type="button" id="btn_close" class="st_bt">x</button>
+            <button type="button" id="btn_next" class="st_bt">→</button>
+            <p id="storyText"></p>
+            <button type="button" id="btn_prev" class="st_bt">←</button>
+        </div>
         <canvas></canvas>
         <button type="button" id="btn_up">↑</button>
         <button type="button" id="btn_right">→</button>
         <button type="button" id="btn_left">←</button>
+        <p id="timer"></p>
     </div>
 
     <script src="index.js" type="module"></script>
-
 
 </body>
 
