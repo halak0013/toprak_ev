@@ -5,7 +5,7 @@ export class Engine {
     constructor() {
         this.scrollOfSet = 0
         this.isInit = false
-
+        this.bound_width=canvas.width/3
     }
 
     movment(player, background, keys) {
@@ -19,7 +19,7 @@ export class Engine {
         player.update(background)
 
         if (this.isInit) {
-            if (keys.right.pressed && player.position.x < 400 && !background.checkCollision(+1, 0)) {
+            if (keys.right.pressed && player.position.x < this.bound_width && !background.checkCollision(+1, 0)) {
                 player.velocity.x = player.speed
                 player.frame++
             }

@@ -110,7 +110,7 @@ export class DarkBackground {
             y
         }
         this.image_dark = res_dark
-        this.width = (canvas.width * 2)
+        this.width = (canvas.height * 2)
         this.height = (canvas.height * 2)
         this.h2 = this.height / 2
         this.w2 = this.width / 2
@@ -129,7 +129,7 @@ export class DarkOBackground {
             y
         }
         this.image_o = res_o_dark
-        this.width = (canvas.width * 2)
+        this.width = (canvas.height * 2)
         this.height = (canvas.height * 2)
         this.h2 = this.height / 2
         this.w2 = this.width / 2
