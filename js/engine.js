@@ -4,8 +4,8 @@ export class Engine {
 
     constructor() {
         this.scrollOfSet = 0
-        this.audio;
         this.isInit = false
+
     }
 
     movment(player, background, keys) {
@@ -27,6 +27,7 @@ export class Engine {
                 (keys.left.pressed && this.scrollOfSet === 0 && player.position.x > 0)) {
                 player.velocity.x = -player.speed
                 player.frame--
+                console.log(player.position.x+"deneme")
 
             }
             else {
@@ -43,6 +44,8 @@ export class Engine {
                     player.position.abs_x -= player.speed
                     background.position.x += player.speed
                     player.frame--
+                    console.log(player.position.x)
+
                 }
             }
         }
@@ -50,6 +53,7 @@ export class Engine {
     //https://alkakrab.itch.io/free-12-tracks-pixel-rpg-game-music-pack
     playSound(track) {
         this.audio = new Audio(track);
+        this.audio.loop = true; // Set the loop property to true
 
         this.audio.play();
 
@@ -68,9 +72,11 @@ export class Engine {
             case 2:
                 levels.l3 = true
                 levels.l2 = false
+                break;
             case 3:
                 levels.final = true
                 levels.l3 = false
+                break;
             default:
                 break;
         }

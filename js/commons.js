@@ -9,9 +9,9 @@ export const speed_ = {
 }
 
 export const levels = {
-    l1: true,
+    l1: false,
     l2: false,
-    l3: false,
+    l3: true,
     final: false,
 }
 
@@ -25,7 +25,8 @@ export const res_dark = new Image();
 res_dark.src = link + "/data/img/dark.png";
 
 export const res_o_dark = new Image();
-res_dark.src = "https://halak0013.github.io/toprak_ev/data/img/dark2.png";
+res_o_dark.src = link + "/data/img/orange_dark.png";
+
 
 //https://ldtk.io/
 export const res_l1 = new Image();
@@ -38,7 +39,7 @@ export const res_l3 = new Image();
 res_l3.src = link + "/data/levels/l3/simplified/AutoLayers_advanced_demo/composite.png";
 
 
-export const story1 = ["Yıllardan 5220.<br> Bir sabah kalmışsın ve bir anda tarlanda değilsin diğer çocuk karpuzlar gibi oyanamak yerine kendini yer altında bulmuşsun.",
+export const story1 = ["Yıllardan 2025.<br> Bir sabah kalmışsın ve bir anda tarlanda değilsin diğer çocuk karpuzlar gibi oyanamak yerine kendini yer altında bulmuşsun.",
     "Etrafta gezinirken dikkat et bir çok engel var. Bu engelleri aşmak için yön tuşlarını kullanabilirsin.",
     "Gittiğin konuma göre karpuzun bir anda görünmez olabilir veya çamura saplanabilirsin.",
     "Sana ve diğer karpuzla ne olduğunu bul ve onları kurtar."

@@ -14,6 +14,8 @@ export class Level1 {
         this.scrollOfSet = 0
 
         this.engine = new Engine()
+        this.bt_reload =document.getElementById('reload')
+        this.bt_reload.addEventListener('click',()=>{this.init()})
     }
 
 

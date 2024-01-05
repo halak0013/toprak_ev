@@ -60,12 +60,12 @@ export class Background {
         let x = cor.x
         let y = cor.y
 
-        console.log("y_v: " + this.player.velocity.y, "y_p: " + this.player.position.y + " abs_x_p: " + this.player.position.abs_x + " x: " + x + " y: " + y + " ca: " + this.ca_h + " ca-y: " + (this.ca_h - y) + " matris: ")
+        //console.log("y_v: " + this.player.velocity.y, "y_p: " + this.player.position.y + " abs_x_p: " + this.player.position.abs_x + " x: " + x + " y: " + y + " ca: " + this.ca_h + " ca-y: " + (this.ca_h - y) + " matris: ")
         if (this.matris[y + t_y][x + t_x] == '1' || this.ca_h < this.player.position.y) {
             return true
         }
         if (this.matris[y + t_y][x + t_x] == '2') {
-            console.log("su")
+            //console.log("su")
             speed_.speed = speed_.speed_r / 4
             speed_.gravity = speed_.speed_r * 0.01
 
@@ -110,8 +110,8 @@ export class DarkBackground {
             y
         }
         this.image_dark = res_dark
-        this.width = this.image_dark.width * 2
-        this.height = this.image_dark.height * 2
+        this.width = (canvas.width * 2)
+        this.height = (canvas.height * 2)
         this.h2 = this.height / 2
         this.w2 = this.width / 2
     }
@@ -129,8 +129,8 @@ export class DarkOBackground {
             y
         }
         this.image_o = res_o_dark
-        this.width = this.image_o.width * 2
-        this.height = this.image_o.height * 2
+        this.width = (canvas.width * 2)
+        this.height = (canvas.height * 2)
         this.h2 = this.height / 2
         this.w2 = this.width / 2
         this.image_o.style.opacity = 0.5

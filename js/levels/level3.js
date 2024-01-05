@@ -14,6 +14,8 @@ export class Level3 {
         this.scrollOfSet = 0
 
         this.engine = new Engine()
+        this.bt_reload =document.getElementById('reload')
+        this.bt_reload.addEventListener('click',()=>{this.init()})
         this.time = 0
     }
 
@@ -25,7 +27,6 @@ export class Level3 {
                     this.init()
                     this.isInit = true;
                     this.engine.storyPart(story3)
-
                 }
                 this.engine.movment(this.player, this.background, this.keys)
                 this.darker()
@@ -38,11 +39,6 @@ export class Level3 {
                 this.init()
             }
         }
-    }
-
-    updateTime() {
-        this.time++;
-
     }
 
     darker() {

@@ -13,6 +13,8 @@ export class Level2 {
         this.background.init(this.player).then(() => { this.ready = true });//
         this.scrollOfSet = 0
         this.engine = new Engine()
+        this.bt_reload =document.getElementById('reload')
+        this.bt_reload.addEventListener('click',()=>{this.init()})
     }
 
 
